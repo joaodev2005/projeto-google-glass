@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tudo sobre Google Glass</title>
+
+  <link rel="shortcut icon" href="./imagens/favicon.ico.png">
+
+  <link rel="stylesheet" type="text/css" href="../src/css/form.css" />
+  <link rel="stylesheet" type="text/css" href="../src/css/estilo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Poppins:ital,wght@0,300;0,500;1,100&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="interface">
+    <header id="cabecalho">
+      <hgroup>
+        <h1>Google Glass</h1>
+        <h2>A revolução do Google está chegando</h2>
+      </hgroup>
+
+      <img id="icone" src="imagens/glass-oculos-preto-peq.png" alt="projeto google glass">
+      <img src="../src/imagens/glass-logo-peq.jpg" alt="logo glass">
+
+      <nav onmouseover="" id="menu">
+        <h1> Menu principal</h1>
+        <ul type="disc">
+          <li onmouseover="mudaFoto('./imagens/home.png')" onmouseout="mudaFoto('./imagens/contato.png')">
+            <a href="index.html">home</a>
+          </li>
+          <li onmouseover="mudaFoto('./imagens/especificacoes.png')" onmouseout="mudaFoto('./imagens/contato.png')"><a
+              href="specs.html">Especificações</a></li>
+          <li onmouseover="mudaFoto('./imagens/fotos.png')" onmouseout="mudaFoto('./imagens/contato.png')">
+            <a href="fotos.html">Fotos</a>
+          </li>
+          <li onmouseover="mudaFoto('./imagens/multimidia.png')" onmouseout="mudaFoto('./imagens/contato.png')"><a
+              href="multimidias.html">Multímidias</a></li>
+          <li onmouseover="mudaFoto('./imagens/contato.png')" onmouseout="mudaFoto('./imagens/contato.png')"><a
+              href="fale-conosco.html">Fale conosco</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <section id="corpo-full">
+      <article id="noticia-principal"></article>
+      <header id="cabecalho-artigo">
+        <hgroup>
+          <h3>Fale Conosco > Contato</h3>
+          <h1>Formulário de Contato</h1>
+          <h2>por Joao Victor</h2>
+          <h3>Atualizado em 30/Janeiro/2023</h3>
+        </hgroup>
+      </header>
+      </article>
+    </section>
+
+    <form method="post" id="fContato" action="mailto:" oninput="calc_total();">
+
+      <fieldset id="usuario">
+        <legend>identificação do Usuário</legend>
+        <p><label for="cNome">Nome:</label><input type="text" nome="tNome" id="cNome" size="20" maxlength="30"
+            placeholder="nome completo"></p>
+        <p><label for="cSenha">Senha:</label><input type="password" nome="tSenha" id="cSenha" size="8" maxlength="8"
+            placeholder="8 digítos"></p>
+        <p><label for="cMail">E-mail:</label><input type="email" name="tMail" id="cMail" size="20" maxlength="40"
+            placeholder="seu email"></p>
+        <fieldset id="sexo">
+          <legend>Sexo:</legend>
+          <input type="radio" name="tSexo" id="cMasc" /><label for="cMasc">Masculino</label><br>
+          <input type="radio" name="tSexo" id="cFem" /><label for="cFem">Feminino</label>
+        </fieldset>
+        <p><label for="cNasc">Data de Nascimento:</label><input type="date" name="tNasc" id="cNasc"></p>
+      </fieldset>
+
+      <fieldset  id="endereco">
+        <legend>endereço do Usuário</legend>
+        <p><label for="cRua">Logradouro:</label><input type="text" name="tRua" id="cRua" size="13" maxlength="80"
+            placeholder="Rua, Avenida, Trav, ..." /></p>
+        <p><label for="cNum">Número</label><input type="number" name="tNum" id="cNum" min="0" max="99999" /></p>
+        <p><label for="cEst">Estado:</label><select name="tEst" id="cEst">
+            <optgroup label="Região Sudeste">
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="SP" selected>São Paulo</option>
+              <option value="MG">Minas Gerais</option>
+            </optgroup>
+
+            <optgroup label="Região Sul">
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="PR">Paraná</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="RS">Rio Grande do Sul</option>
+            </optgroup>
+          </select> </p>
+        <p><label for="cCid">Cidade:</label>
+          <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades">
+        </p>
+        <datalist id="cidades">
+          <option value="rio de janeiro"></option>
+          <option value="Nova Iguaçu"></option>
+          <option value="Belford Roxo"></option>
+          <option value="Niterói"></option>
+        </datalist>
+      </fieldset>
+
+      <fieldset id="mensagem">
+        <legend >Mensagem do Usuário</legend>
+        <p><label for="cUrg">Grau de Urgência:</label>
+          Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2" />Máx</p>
+        <p><label for="cMsg">Mensagem:</label>
+          <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+        </p>
+      </fieldset>
+
+      <fieldset id="pedido">
+        <legend>Quero um Google Glass</legend>
+        <p><input type="checkbox" name="tPed" id="cPed" checked />
+          <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label>
+        </p>
+        <p><label for="cCor">Cor:</label>
+          <input type="color" name="tCor" id="cCor" value="#ffffff" />
+        </p>
+        <p><label for="cQtd">Quantidade:</label>
+          <input type="number" name="cQtd" id="cQtd" min="0" max="5" value="0" />
+        </p>
+        <p><label for="cTot">Preço Total: R$</label>
+          <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/>
+        </p>
+      </fieldset>
+
+      <input id="botao"type="image" name="tEnviar" src="./imagens/botao-enviar.png"/>
+    
+    </form>
+
+    <footer id="rodape">
+
+      <p>copyright &copy; 2023 - by joao victor <br /> <a href="htpp://facebook.com/cursoemvideo"
+          target="_blank">facebook</a> |<a href="htpp://twitter.com/cursoemvideo" target="_blank"> twitter</a> </p>
+    </footer>
+
+  </div>
+
+  <script src="../src/js/index.js"></script>
+
+</body>
+
+</html>
